@@ -56,7 +56,7 @@ func main() {
 		log.Errorf("Error: %s\n", err)
 		os.Exit(1)
 	}
-	req.SetBasicAuth(conf.AuthToken, "x-oauth-basic")
+	req.SetBasicAuth("token " + conf.AuthToken, "Authorization")
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Accept", "application/json")
 
